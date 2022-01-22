@@ -1,0 +1,2 @@
+dd if=os.bin ibs=512 skip=11 count=1 | xxd
+objdump -D -b binary -mi386 -Maddr16,data16 cool

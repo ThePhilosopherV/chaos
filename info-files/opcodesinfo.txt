@@ -1,0 +1,77 @@
+int x         ;   cd x
+hlt           ;   f4 
+jmp $         ;   eb fe    ; jump here endlessly ; jmp -2
+cli           ;   fa
+lodsb         ;   ac
+
+jmp x         ;   eb x  ;case (1) if jmp is forward x is the number of bytes to skip until reaching the destination label (instruction)
+                        ;case (2)  if jmp is backward x is the signed (negative number)  of how many bytes to skip to reach the destination label (instruction)
+
+jc  x         ;  72 x                        
+je x          ;  74 x
+jne x         ;  75 x
+jl   x        ;  7c x
+jle  x        ;  7e x
+jg  x         ;  7f x
+jge x         ;  7d x
+
+
+mov ax,msg    ;  b8 ab cd  ; moves address to ax , abcd  is the offset of the msg label 
+mov ax,word [msg] ; a1 08 00  ;08 00 is the offset of byte/bytes to pointed to by msg
+                        
+inc ax        ;  40
+inc cx        ;  41
+inc dx        ;  42
+inc bx        ;  43
+                     
+;__________________________
+
+mov al,x      ;   b0 x
+mov cl,x      ;   b1 x
+mov dl,x      ;   b2 x
+mov bl,x      ;   b3 x
+
+mov ah,x      ;   b4 x
+mov ch,x      ;   b5 x
+mov dh,x      ;   b6 x
+mov bh,x      ;   b7 x
+
+mov ax,0xabcd ;   b8 cd ab
+mov cx,0xabcd ;   b9 cd ab
+mov dx,0xabcd ;   ba cd ab
+mov bx,0xabcd ;   bb cd ab
+
+mov sp,0      ;   bc 00 00
+mov bp,0      ;   bd 00 00
+mov si,0      ;   be 00 00
+mov di,0      ;   bf 00 00
+
+mov al,0x78  > 9
+mov bx,0x56eb > 7
+
+
+mov bp,0x0010
+mov dl,0xab
+
+
+__________________________
+
+mov bx,0xdead
+mov al,0xcd
+mov di,0x50be
+
+bb ad de b0 cd bf be 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
